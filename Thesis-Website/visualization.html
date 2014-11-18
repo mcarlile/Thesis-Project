@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+	<title>Visualization</title>
+	<style type="text/css">
+
+		html {
+			background-color: #105B63;
+		}
+
+		h3 {
+			font-family: "Lato", Arial, serif;
+			font-weight: 300;
+			color: #FCFBF7;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			margin-top: 0;
+		}
+
+		body {
+			margin: 0;
+		}
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<h3>Visualization Prototype 3</h3>
+	<!-- <p>There are <span class="numberOfEntries">x</span> entries this month</p> -->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+    	
+//Setting up some variables
+var data;
+var x = 40;
+var y = 0;
+var radius = 5;
+var distanceBetweenCircles = 20;
+var rowHeight = 20;
+var entryCount;
+
+//Setting up SVG Container
+var svgContainer = d3.select("body").append("svg")
+.attr("width", 600)
+.attr("height", 650)
+.attr("class", "graph-svg-component");
+
+d3.json("http://storm.usc.edu/~mcarlile/finalproject/data/entries.json", function(error, json) {
+	if (error) return console.warn(error);
+	data = json;
+
+	countEntries();
+	drawCircles();
+});	
+
+function countEntries() {
+	entryCount = data.entry.length;
+	$('.numberOfEntries').text(entryCount);
+}
+
+function countCharacters (a) {
+	// return data.entry[a].text.length;
+	return data.entry[a].text.split(/\s+/).length;;
+}
+
+function drawCircles() {
+
+
+	//for each daily entry...
+	for (i = 0; i < entryCount; i++) {
+
+		//make a new row in the visualization
+		y = y + rowHeight;
+		x = 40;
+
+
+		//make a label for the entry date
+		svgContainer.append("text")
+			.attr("x", x-distanceBetweenCircles) 
+			.attr("y", y+rowHeight/4)
+			.attr("fill", "#FCFBF7")
+			.attr("text-align", "right")
+			.attr("text-anchor", "end")
+			.attr("font-family", "Lato, Arial, serif")
+			.attr("font-weight", 100)
+			.attr("font-size", 8)
+			.text(i+1);
+
+		//and count how many characters are within the <text></text> string and store it as a property called wordCount for each entry (entries[i].wordCount)
+		var characterCount = countCharacters(i);
+		console.log(characterCount);
+
+
+
+		//draw a circle to represent each character in the entry
+		for (j = 0; j < characterCount; j++) {
+
+			//draw a circle
+			svgContainer.append("circle")        // attach a circle
+    			.attr("cx", x)           // position the x-center
+    			.attr("cy", y)           // position the y-center
+    			.attr("r", radius)		// set the radius
+    			.attr("fill", "#FFFAD6");;    //set the fill color      
+
+			//increment the x value to get ready to draw the next circle
+			x = x + distanceBetweenCircles;
+		}
+	}
+
+}
+
+</script>
+
+</body>
+</html>
+
