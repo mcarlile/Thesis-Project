@@ -31,10 +31,9 @@
 	</style>
 </head>
 <body>
-	<h3>Visualization Prototype 3</h3>
 	<p>Selected Journal: <select id="order">
-		<option value="mcKenzie">McKenzie</option>
 		<option value="barbara">Barbara</option>
+		<option value="mckenzie">McKenzie</option>
 	</select>
 	<!-- <p>There are <span class="numberOfEntries">x</span> entries this month</p> -->
 
@@ -52,16 +51,16 @@ var x = 20;
 var y = 0;
 var radius = 1;
 var distanceBetweenCircles = 3;
-var rowHeight = 20;
+var rowHeight = 10;
 var entryCount;
 
 //Setting up SVG Container
 var svgContainer = d3.select("body").append("svg")
 .attr("width", 1200)
-.attr("height", 650)
+.attr("height", 325)
 .attr("class", "graph-svg-component");
 
-d3.json("http://storm.usc.edu/~mcarlile/finalproject/data/entries2.json", function(error, json) {
+d3.json("http://storm.usc.edu/~mcarlile/finalproject/data/entries.json", function(error, json) {
 	if (error) return console.warn(error);
 	data = json;
 
@@ -92,7 +91,7 @@ function drawCircles() {
 
 		//make a label for the entry date
 		svgContainer.append("text")
-		.attr("x", x-distanceBetweenCircles) 
+		.attr("x", x - distanceBetweenCircles*2) 
 		.attr("y", y+rowHeight/4)
 		.attr("fill", "#FCFBF7")
 		.attr("text-align", "right")
@@ -104,9 +103,6 @@ function drawCircles() {
 
 		//and count how many characters are within the <text></text> string and store it as a property called wordCount for each entry (entries[i].wordCount)
 		var characterCount = countCharacters(i);
-		console.log(characterCount);
-
-
 
 		//draw a circle to represent each character in the entry
 		for (j = 0; j < characterCount; j++) {

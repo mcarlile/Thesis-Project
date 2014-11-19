@@ -168,8 +168,7 @@ h4 {
 }
 
 .process-section iframe {
-    height: 375px;
-    scrolling: "no";
+    height: 1200px;
     border: none;
     margin-top: 0;
     margin-left: 0;
