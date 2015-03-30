@@ -60,6 +60,7 @@ var svgContainer = d3.select("body").append("svg")
 .attr("height", 650)
 .attr("class", "graph-svg-component");
 
+//grab the js file
 d3.json("http://storm.usc.edu/~mcarlile/finalproject/data/entries.json", function(error, json) {
 	if (error) return console.warn(error);
 	data = json;

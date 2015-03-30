@@ -5,240 +5,358 @@
  */
 
  body {
-    width: 100%;
-    height: 100%;
-}
+ 	width: 100%;
+ 	height: 100%;
+ }
 
-html {
-    width: 100%;
-    height: 100%;
-}
+ html {
+ 	width: 100%;
+ 	height: 100%;
+ }
 
-h1 {
-    text-align: left;
-    font-family: 'Libre Baskerville', serif;
-    color: #BD4931;
-    margin-bottom: 30px;
-}
+ h1 {
+ 	text-align: left;
+ 	font-family: 'Libre Baskerville', serif;
+ 	color: #BD4931;
+ 	margin-bottom: 30px;
+ }
 
-p {
-    text-align: left;
-    font-size: 17px;
-    line-height: 30px;
-}
-@media(min-width:767px) {
-    .navbar {
-        padding: 20px 0;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
-    }
+ p {
+ 	text-align: left;
+ 	font-size: 17px;
+ 	line-height: 30px;
+ }
 
-    .top-nav-collapse {
-        padding: 0;
-    }
-}
+ h2 {
+
+ 	font-family: 'Libre Baskerville', serif;
+ 	text-align: left;
+ 	line-height: 1.25;
+ 	color: white;
+ 	/*margin-top: 25%;*/
+ }
+
+ #intro .row {
+ 	margin-top: 25%;
+ 	margin-bottom: 15%
+ }
+
+ .footerrow {
+ 	width: 100%;
+ }
+
+ #abstract .row {
+ 	margin-bottom: 15%
+ }
+
+ #process .col-md-6 img {
+ 	width: 100%;
+ }
+
+ #process .col-lg-12 img {
+ 	width: 100%;
+ 	margin-top: 5%;
+ 	margin-bottom: 5%;
+ }
+
+ @media(min-width:767px) {
+ 	.navbar {
+ 		padding: 20px 0;
+ 		-webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+ 		-moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+ 		transition: background .5s ease-in-out,padding .5s ease-in-out;
+ 	}
+
+/* 	.intro-section .container {
+ 		position: relative;
+ 		top: 45%;
+ 		transform: translateY(-50%);
+ 	}
+
+ 	.abstract-section .container {
+ 		position: relative;
+ 		top: 45%;
+ 		transform: translateY(-50%);
+ 		}*/
+
+
+ 		h2 {
+ 			font-size: 48pt;
+ 			text-align: left;
+ 		}
+
+ 		.top-nav-collapse {
+ 			padding: 0;
+ 		}
+
+ 	}
 
 /* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
 The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
 of those sections to manage the look and feel of the site. */
 
 .intro-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #FFD34C;
+	/*height: 100%;*/
+	text-align: center;
+	background: #FFD34C;
 }
+@media (max-width: 767px) {
+/*	.intro-section .container {
+		position: relative;
+		top: 25%;
+		transform: translateY(-50%);
+		}*/
+	}
 
-#hero.container {
-    position: relative;
-    top: 45%;
-    transform: translateY(-50%);
-}
+	#hero.container {
+		position: relative;
+		top: 45%;
+		transform: translateY(-50%);
+	}
 
-.intro-section p {
+	.image {
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin: 0;
+		width: 100%;
+	}
 
-    font-family: 'Libre Baskerville', serif;
-    font-size: 72px;
-    text-align: left;
-    line-height: 1.25;
-    color: white;
-}
+	.image1 {
+		background-image: url("http://storm.usc.edu/~mcarlile/finalproject/img/journal.jpg");
+	}
 
-img .full-width{
-    width: 100%;
-}
+	.image2 {
+		background-image: url("http://storm.usc.edu/~mcarlile/finalproject/img/datebook.jpg");
+	}
 
-/*header title style*/
-.navbar-header.page-scroll {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-color: black;
-}
+	.image .row {
+		margin-top: 25%;
+		margin-bottom: 25%;
+	}
 
-/*header menu style*/
-ul.nav.navbar-nav {
- text-transform: uppercase;
- letter-spacing: 2px; 
- color: black;
-}
+	.intro-section p {
 
-.abstract-section {
-    height: 100%;
-    padding-top: 100px;
-    text-align: center;
-    background: #eee;
-}
+		font-family: 'Libre Baskerville', serif;
+		font-size: xx-large;
+		text-align: center;
+		line-height: 1.25;
+		color: white;
+	}
 
-h3 {
- text-transform: uppercase;
- letter-spacing: 2px; 
- text-align: left;
- margin-bottom: 20px;
-}
+	img .full-width{
+		width: 100%;
+	}
 
-h4 {
-    text-align: left; 
-    text-transform: uppercase;
-    letter-spacing: 2px; 
-    font-size: 14px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
+	/*header title style*/
+	.navbar-header.page-scroll {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		text-color: black;
+	}
+
+	/*header menu style*/
+	ul.nav.navbar-nav {
+		text-transform: uppercase;
+		letter-spacing: 2px; 
+		color: black;
+	}
+
+	.abstract-section {
+		/*height: 100%;*/
+		padding-top: 100px;
+		text-align: center;
+		background: white;
+	}
+
+	.abstract-section img {
+		width: 75%;
+	}
+
+	h3 {
+		text-transform: uppercase;
+		letter-spacing: 2px; 
+		text-align: left;
+		margin-bottom: 20px;
+	}
+
+	h4 {
+		text-align: left; 
+		text-transform: uppercase;
+		letter-spacing: 2px; 
+		font-size: 14px;
+		margin-bottom: 30px;
+		margin-top: 30px;
+	}
+
+	.image h4 {
+		color: white;
+		margin-top: 50px;
+		text-align: right;
+	}
 
 
-#left {
-    width: 60%;
-    float: left;
-}
+	#left {
+		width: 60%;
+		float: left;
+	}
 
-#right {
-    width: 40%;
-    float: left;
-}
+	#left img {
+		width: 100%;
+	}
 
-#right img{
-    margin-left: 10px;
-    width: 90%;
-}
 
-.datebook-section {
-    /*height: 100%;*/
-    padding-top: 0px;
-}
+	#right {
+		width: 40%;
+		float: left;
+	}
 
-.datebook-section p {
-    position: absolute;
-    top: 50px;
-}
+	#right img{
+		margin-left: 10px;
+		width: 90%;
+	}
 
-.datebook-section img {
-    width: 100%;
-}
+	.datebook-section {
+		/*height: 100%;*/
+		padding-top: 0px;
+	}
 
-.background-section {
-    /*height: 200%;*/
-    padding-top: 150px;
-    padding-bottom: 150px;
-    text-align: center;
-    background: #fff;
-}
+	.datebook-section p {
+		position: absolute;
+		top: 50px;
+	}
 
-.process-section {
-    padding-top: 150px;
-    text-align: center;
-    background: #105B63;
-    height: 100%;
-}
+	.datebook-section img {
+		width: 100%;
+	}
 
-.process-section h1 {
+	.background-section {
+		/*height: 200%;*/
+		padding-top: 50px;
+		padding-bottom: 50px;
+		text-align: center;
+		background: #fff;
+	}
+
+	.process-section {
+		padding-top: 50px;
+		text-align: center;
+		background:#fff;
+	}
+
+/*.process-section h1 {
     color: white;
 }
 
 .process-section p {
     color: white;
-}
+    }*/
 
- .process-section #right {
-    height: 100%;
-}
+    .process-section #right {
+    	height: 100%;
+    }
 
- .process-section #left {
-    padding-right: 30px;
-}
+    .process-section #left {
+    	padding-right: 30px;
+    }
 
-.process-section iframe {
-    height: 375px;
-    scrolling: "no";
-    border: none;
-    margin-top: 25px;
-    margin-left: 0;
-}
+    .process-section iframe {
+    	height: 375px;
+    	scrolling: "no";
+    	border: none;
+    	margin-top: 25px;
+    	margin-left: 0;
+    }
 
-.cited-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #fff;
-}
+    .process-section img {
+    	float: left;
+    }
 
-iframe  {
-    margin-left: 20px;
-    margin-top: 70px;
-}
+    #prototype {
+    	margin-top: 50px;
+    	float: left;
+    }
 
-#exhibitions {
-    width: 30%;
-    float: left;
-    height: 50px;
-}
+    .cited-section {
+    	height: 100%;
+    	padding-top: 50px;
+    	text-align: center;
+    	background: #fff;
+    }
 
-#writing {
-    width: 30%;
-    height: 50px;
-    margin-right: auto;
-    margin-left: auto;
+    #full-width {
+    	float: left;
+    }
 
-}
+    #full-width img {
+    	margin-top: 25px;
+    	margin-bottom: 25px;
+    	width: 100%;
+    }
 
-#talks {
-    width: 30%;
-    float: right;
-    height: 50px;
-}
+    iframe  {
+    	margin-left: 20px;
+    	margin-top: 70px;
+    }
 
-#exhibitions  p {
-    font-size: 12px;
-}
+    #exhibitions {
+    	width: 30%;
+    	float: left;
+    	height: 50px;
+    }
 
-#writing  p {
-    font-size: 12px;
-}
+    #writing {
+    	width: 30%;
+    	height: 50px;
+    	margin-right: auto;
+    	margin-left: auto;
 
-#talks  p {
-    font-size: 12px;
-}
+    }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #e7e7e7;
-    /*height: 30px;*/
-}
+    #talks {
+    	width: 30%;
+    	float: right;
+    	height: 50px;
+    }
 
-#footer p {
-    font-size: 12px;
+    #exhibitions  p {
+    	font-size: 12px;
+    }
 
-}
+    #writing  p {
+    	font-size: 12px;
+    }
 
-#works-cited {
-    background-color: white;
-    position: relative;
-    height: 100%;
-}
+    #talks  p {
+    	font-size: 12px;
+    }
 
+    #footer {
+    	/*position: absolute;*/
+    	bottom: 0;
+    	left: 0;
+    	width: 100%;
+    	background-color: #e7e7e7;
+    	/*height: 30px;*/
+    	margin-top: 5%;
+    }
+
+    #footer p {
+    	font-size: 12px;
+
+    }
+
+    #works-cited {
+    	background-color: white;
+    	position: relative;
+    }
+
+    .wrap {
+    	min-height: 100%;
+    	height: auto !important;
+    	height: 100%;
+    	/* Negative indent footer by it's height */
+    	margin: 0 auto -60px;
+    }
 
 
 
