@@ -7,7 +7,7 @@ color color2 = color(143, 178, 89);
 color color3 = color(255, 217, 51); 
 color color4 = color(253, 127, 0); 
 
-int[][] January = {  
+int[][] 1 = {  
 
   {
     0, 0, 0, 0, 0, 0, 0, 0
@@ -422,13 +422,13 @@ void setup() {
 
 void draw() {
   if (month ==1) {
-    for (int i = 0; i < January[0].length; i++) {
-      for (int j = 0; j < January[1].length; j++) {
-        if (January[i][j] == 0) {
+    for (int i = 0; i < 1[0].length; i++) {
+      for (int j = 0; j < 1[1].length; j++) {
+        if (1[i][j] == 0) {
           fill(0);
-        } else if (January[i][j] == 1) {
+        } else if (1[i][j] == 1) {
           fill(color2);
-        } else if (January[i][j] < 5) {
+        } else if (1[i][j] < 5) {
           fill(color3);
         } else {
           fill(color4);
