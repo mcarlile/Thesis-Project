@@ -1,6 +1,7 @@
 int cols = 8;
 int rows = 8;
 int month = 1;
+int months = 12;
 int [][] values;
 
 color color0 = color (0, 0, 0);
@@ -19,11 +20,11 @@ void setup() {
   //create a 2D array of ints called values 
   values = new int [totalRows][cols];
 
-  for (int m = 0; m < 12; m++) {
+  //set the values in the array according to the values in the table 
+  for (int m = 0; m < months; m++) {
     for (int c = 0; c < cols; c++) {
       for (int r = 0; r < rows; r++) {
         values[r+m*rows][c] = table.getInt(m*rows*cols + c*rows + r, 0);
-        println(values[r][c]);
       }
     }
   }
