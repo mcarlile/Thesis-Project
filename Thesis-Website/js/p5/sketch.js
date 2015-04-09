@@ -10,12 +10,18 @@ var slider;
 var visualizationCanvas;
 var secondaryVisualizationCanvas;
 var widthOfDiv;
+var displayedMonth;
+var monthNames = [];
 
 function preload(){
 	table = loadTable("data/1988.csv", "csv");
 }
 
 function setup() {
+	monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "December"]
+	console.log(monthNames);
+	displayedMonth = document.getElementById('displayedMonth');
+	console.log(displayedMonth)
 	visualizationCanvas = createCanvas(400, 400);
 	visualizationCanvas.parent('visualizationContainer');
 
@@ -65,14 +71,6 @@ function draw() {
 
 		temp_row_counter++;		
 	}
+$("#displayedMonth").text(monthNames[cur_month-1]);
 
-} 
-
-function mouseClicked() {
-	if (cur_month <= 10) {
-		cur_month++;
-	} else {
-		cur_month = 1;
-	}	
-	console.log(cur_month);
 } 
