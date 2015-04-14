@@ -54,21 +54,70 @@ function setup() {
 		}
 		values.push(temp_row);
 	}
-
-
-
 }
 
 function draw() {
 	background(43,43,43);
+	drawChart();
+	drawMap();
+}
 
+function drawChart() {
+	var barX = (canvasWidth);
+	var barWidth = (canvasWidth/14);
+	var barXPosition = canvasWidth + barWidth;
+	var barYPosition = canvasHeight/2;
+	var barHeightMultiplier = 20;
+
+	//define appearance of individual bar chart bars
+	fill(100,100,100);
+	stroke(43,43,43);
+	strokeWeight(3);
+	var barY;
+
+	//create a bar chart with the height representing number of locations mentioned that month
+	for (var a = 0; a < monthlyValues.getRowCount(); a++) {
+		if (cur_month-1 == a) {
+			fill(206,206,206);
+		} else {
+			fill(100,100,100);
+		}
+		barY = barHeightMultiplier*monthlyValues.getNum(a,0);
+		locationsMentioned = monthlyValues.getNum(cur_month-1,0);
+		rect(barXPosition, barYPosition, barWidth, barY);
+		barXPosition = barXPosition + canvasWidth/14;
+
+	}
+
+	//set label on slider
+	$("#displayedMonth").text(monthNames[cur_month-1]);
+	//set label in sketch
+	fill(255);
+	noStroke();
+
+	textFont("Arial");
+	textSize(12);
+	fill(131,131,131);
+	text("DISPLAYED MONTH: ", canvasWidth+barWidth, canvasHeight/8);
+	textFont("Baskerville");
+	textSize(24);
+	fill(255);
+	text(monthNames[cur_month-1], canvasWidth+barWidth, canvasHeight/8+25);
+
+	textFont("Arial");
+	textSize(12);
+	fill(131,131,131);
+	text("LOCATIONS MENTIONED: ", canvasWidth+barWidth, canvasHeight/8+75);
+	textFont("Baskerville");
+	textSize(24);
+	fill(255);
+	text(locationsMentioned, canvasWidth+barWidth, canvasHeight/8+100);
+} 
+
+function drawMap() {
 	cur_month = slider.value();
-	 var upper_bound = cur_month*rows - 1;
-		// var upper_bound = cur_month*rows;
-
+	var upper_bound = cur_month*rows - 1;
 	var lower_bound = (cur_month*rows) - rows;
-
-
 	var temp_row_counter = 0;
 	for (var i = lower_bound; i <= upper_bound; i++) {
 		for (var j = 0; j < rows; j++) {
@@ -81,38 +130,10 @@ function draw() {
 			} else {
 				fill(color4);
 			}
+			stroke(43,43,43);
+			strokeWeight(3);
 			rect(j*rect_height, temp_row_counter*rect_width, rect_width, rect_height);
 		}
-
 		temp_row_counter++;		
 	}
-
-	var barX = (canvasWidth);
-	var barY = 50;
-	var barWidth = (canvasWidth/20);
-	var barXPosition = canvasWidth + (canvasWidth/10);
-	var barYPosition = canvasHeight/2;
-	var barHeightMultiplier = 5;
-	//define appearance of individual bar chart bars
-	fill(100,100,100);
-	noStroke();
-
-	//create a bar chart with the height representing number of locations mentioned that month
-	for (var a=0; a < monthlyValues.getRowCount(); a++) {
-		rect(barXPosition, barYPosition, barWidth, barY);
-		barXPosition = barXPosition + canvasWidth/15;
-		barY = ((canvasHeight) * .01*barHeightMultiplier* (monthlyValues.getNum(a,0)));
-		locationsMentioned = monthlyValues.getNum(cur_month-1,0);
-	}
-
-	//set label on slider
-	$("#displayedMonth").text(monthNames[cur_month-1]);
-	//set label in sketch
-	fill(255);
-
-	text("Displayed Month: " + monthNames[cur_month-1], canvasWidth, canvasHeight/4);
-	text("Number of locations mentioned: " + locationsMentioned, canvasWidth, (canvasHeight/4)+20);
-
-	$( "input" ).change(function() {
-	});
-} 
+}
