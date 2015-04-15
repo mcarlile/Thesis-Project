@@ -21,7 +21,6 @@ $(function() {
 $(window).load(function() {   
     if ($(window).width() >= 768){  
         $('.second').css('margin-top',($('.first').height()-$('.second').height())/2)
-        console.log("resized");
     } else {
         $('.second').css('margin-top', 0);
     }

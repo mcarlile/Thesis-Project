@@ -15,7 +15,10 @@ var monthNames = [];
 var canvasWidth = 400;
 var canvasHeight = 400;
 var barchartData = [];
-var locationsMentioned = 0; 
+var locationsMentioned = 0;
+var chartXpositions = [];
+var barWidth;
+var barWidthHasBenSet = false;
 
 function preload(){
 	table = loadTable("data/1988.csv", "csv");
@@ -31,6 +34,9 @@ function setup() {
 	visualizationCanvas = createCanvas(widthOfDiv, canvasHeight);
 	visualizationCanvas.parent('visualizationContainer');
 
+	var barX = (canvasWidth);
+	barWidth = (canvasWidth/14);
+	barWidthHasBenSet = true;
 	slider = createSlider(1, 12, 0);
 	slider.value(0);
 	slider.parent('controlContainer');
@@ -58,16 +64,62 @@ function setup() {
 
 function draw() {
 	background(43,43,43);
-	drawChart();
-	drawMap();
+
+	if (barWidthHasBenSet == true) {
+		drawChart();
+		drawMap();
+		var mappedMouse = round(map(mouseX, canvasWidth+barWidth, width-barWidth, 1, 12));
+
+		if (mouseY >= 0 && mouseY <= height) {
+			if (mappedMouse >= 1 && mappedMouse <=12) {
+				slider.value(mappedMouse);
+			}
+		}
+		// if (mouseX > chartXpositions[0]-barWidth) {
+		// 	if (mouseX < chartXpositions[1]-barWidth) {
+		// 		slider.value(1);
+		// 	} else if (mouseX < chartXpositions[2]-barWidth) {
+		// 		slider.value(2);
+		// 	} else if (mouseX < chartXpositions[3]-barWidth) {
+		// 		slider.value(3);
+		// 	} else if (mouseX < chartXpositions[4]-barWidth) {
+		// 		slider.value(4);
+		// 	} else if (mouseX < chartXpositions[5]-barWidth) {
+		// 		slider.value(5);
+		// 	} else if (mouseX < chartXpositions[6]-barWidth) {
+		// 		slider.value(6);
+		// 	} else if (mouseX < chartXpositions[7]-barWidth) {
+		// 		slider.value(7);
+		// 	} else if (mouseX < chartXpositions[8]-barWidth) {
+		// 		slider.value(8);
+		// 	} else if (mouseX < chartXpositions[9]-barWidth) {
+		// 		slider.value(9);
+		// 	} else if (mouseX < chartXpositions[10]-barWidth) {
+		// 		slider.value(10);
+		// 	} else if (mouseX < chartXpositions[11]-barWidth) {
+		// 		slider.value(11);
+		// 	} else if (mouseX < chartXpositions[12]-barWidth) {
+		// 		slider.value(12);
+		// 	} else {
+		// 		slider.value(13);
+		// 	}
+		// }
+	// 	if (mouseX > chartXpositions[0]-barWidth) {
+
+	// 		for (var i = 0; i < chartXpositions.length(); i++) {
+	// 			if (mouseX < chartXpositions[i+1]-barWidth) {
+	// 				slider.value(i+1);
+	// 		}
+	// 	}
+	// }
+}
 }
 
 function drawChart() {
-	var barX = (canvasWidth);
-	var barWidth = (canvasWidth/14);
 	var barXPosition = canvasWidth + barWidth;
 	var barYPosition = canvasHeight/2;
 	var barHeightMultiplier = 20;
+	var chartMargin = barWidth;
 
 	//define appearance of individual bar chart bars
 	fill(100,100,100);
@@ -82,10 +134,13 @@ function drawChart() {
 		} else {
 			fill(100,100,100);
 		}
-		barY = barHeightMultiplier*monthlyValues.getNum(a,0);
+		barY = map(monthlyValues.getNum(a,0),0,9,0,canvasHeight/2);
 		locationsMentioned = monthlyValues.getNum(cur_month-1,0);
-		rect(barXPosition, barYPosition, barWidth, barY);
+		rect(barXPosition, (height-barY)-chartMargin, barWidth, barY);
+
+
 		barXPosition = barXPosition + canvasWidth/14;
+		chartXpositions[a] = barXPosition;
 
 	}
 
