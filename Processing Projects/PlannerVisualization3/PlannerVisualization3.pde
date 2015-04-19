@@ -38,6 +38,9 @@ void setup() {
 }
 
 void draw() {
+  myPort.write(month);
+
+
   for (int i = ( (month*cols)-cols); i < cols*month; i++) {
     for (int j = 0; j < rows; j++) {
       if (values[i][j] == 0) {
@@ -56,10 +59,8 @@ void draw() {
 
 
 void keyPressed() {
-  myPort.write('1');         //send a 1
-  println("1");
+
   if (keyCode == DOWN) {
-    myPort.write(month);
 
     if (month <= 11) {
       month++;
