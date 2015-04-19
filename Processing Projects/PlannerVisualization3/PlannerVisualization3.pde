@@ -1,3 +1,6 @@
+import processing.serial.*;
+
+
 int cols = 8;
 int rows = 8;
 int month = 1;
@@ -10,8 +13,12 @@ color color2 = color(143, 178, 89);
 color color3 = color(255, 217, 51); 
 color color4 = color(253, 127, 0); 
 
+Serial myPort;
+
 void setup() {
   size(800, 800);
+  String portName = Serial.list()[5]; //change the 0 to a 1 or 2 etc. to match your port
+  myPort = new Serial(this, portName, 9600);
 
   //load the CSV into a table
   Table table = loadTable("1988.csv");
@@ -49,13 +56,18 @@ void draw() {
 
 
 void keyPressed() {
+  myPort.write('1');         //send a 1
+  println("1");
   if (keyCode == DOWN) {
+    myPort.write(month);
+
     if (month <= 11) {
       month++;
     } else if (month ==12) {
       month = 1;
     }
   } else if (keyCode == UP) {
+
     if (month >= 2) {
       month --;
     } else if (month == 1) {
