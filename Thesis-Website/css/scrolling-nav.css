@@ -59,6 +59,10 @@
  	margin-bottom: 5%;
  }
 
+ #hiddenControls {
+ 	display: none;
+ }
+ 
  @media(min-width:767px) {
  	.navbar {
  		padding: 20px 0;
@@ -122,11 +126,12 @@ of those sections to manage the look and feel of the site. */
 	}
 
 	.image1 {
-		background-image: url("http://storm.usc.edu/~mcarlile/finalproject/img/journal.jpg");
+		background-image: url("http://storm.usc.edu/~mcarlile/65401/img/journal.jpg");
 	}
 
 	.image2 {
-		background-image: url("http://storm.usc.edu/~mcarlile/finalproject/img/datebook.jpg");
+		background-image: url("http://storm.usc.edu/~mcarlile/65401/img/datebook.jpg");
+		margin-top: 40px;
 	}
 
 	.image .row {
