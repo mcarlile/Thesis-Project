@@ -35,9 +35,9 @@ Serial myPort;
 
 public void setup() {
   size(800, 800);
-
-  String portName = Serial.list()[5]; //change the 0 to a 1 or 2 etc. to match your port
-  myPort = new Serial(this, portName, 9600);
+  println(Serial.list());
+    String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
+    myPort = new Serial(this, portName, 9600);
 
   //load the CSV into a table
   Table table = loadTable("1988.csv");
