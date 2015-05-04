@@ -40,8 +40,84 @@ void loop () {
     Colorduino.SetPixel(4, 13, 255, 255, 255); //yellow
   } else if (val == 2) {
     clearPixels();
-    Colorduino.SetPixel(7, 8, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 15, 255, 255, 255); //green
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //orange
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //yellow\
+    Colorduino.SetPixel(4, 12, 255, 255, 255); //yellow
+  } else if (val == 3) {
+    clearPixels();
+    Colorduino.SetPixel(6, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //orange
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //yellow
+  } else if (val == 4) {
+    clearPixels();
+    Colorduino.SetPixel(7, 11, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(5, 12, 255, 255, 255); //green
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //orange
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(4, 14, 255, 255, 255); //yellow
+  } else if (val == 5) {
+    clearPixels();
+    Colorduino.SetPixel(7, 14, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //orange
+  } else if (val == 6) {
+    clearPixels();
+    Colorduino.SetPixel(6, 12, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //orange
+  } else if (val == 7) {
+    clearPixels();
+    Colorduino.SetPixel(7, 15, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 12, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(6, 15, 255, 255, 255); //green
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //yellow
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //orange
+    Colorduino.SetPixel(4, 13, 255, 255, 255); //yellow
+  } else if (val == 8) {
+    clearPixels();
+    Colorduino.SetPixel(6, 14, 255, 255, 255); //green
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(4, 12, 255, 255, 255); //green
+    Colorduino.SetPixel(0, 12, 255, 255, 255); //green
+  } else if (val == 9) {
+    clearPixels();
+    Colorduino.SetPixel(7, 14, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 12, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //yellow
+  } else if (val == 10) {
+    clearPixels();
+    Colorduino.SetPixel(6, 12, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(6, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(4, 14, 255, 255, 255); //green
+    Colorduino.SetPixel(3, 12, 255, 255, 255); //green
+    Colorduino.SetPixel(3, 13, 255, 255, 255); //green
+    Colorduino.SetPixel(2, 12, 255, 255, 255); //green
+  } else if (val == 11) {
+    clearPixels();
+    Colorduino.SetPixel(5, 13, 255, 255, 255); //yellow
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(4, 14, 255, 255, 255); //green
+  } else if (val == 12) {
+    clearPixels();
+    Colorduino.SetPixel(5, 14, 255, 255, 255); //yellow
+    Colorduino.SetPixel(4, 12, 255, 255, 255); //green
+    Colorduino.SetPixel(3, 9, 255, 255, 255); //green
   }
+
 
   delay(10);
 }
@@ -49,7 +125,7 @@ void loop () {
 void clearPixels () {
 
   for (int r = 0; r < 8; r++) {
-    for (int c = 8; c < 15; c++) {
+    for (int c = 8; c < 16; c++) {
       Colorduino.SetPixel(r, c, 0, 0, 0);
     }
   }
