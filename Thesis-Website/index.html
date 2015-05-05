@@ -292,104 +292,136 @@
 
     					<h1>Build Progress</h1>
 
-    					<h4>Assembling the Matrix</h4>
-    					<div class="row">
-    						<div class="col-md-6">
-    							<img src="img/wiring.jpg">
-    						</div>
-    						<div class="col-md-6">
-    							<p>To create the grid on which the visualization will be displayed, I am using an 8x8 grid of RGB LEDs. To keep costs down, I've decided to repurpose an old IKEA Kallax bookshelf to serve as the frame of the display. I've attached foam board to the back of the shelf to easily mount and adjust the LEDs.
-    							</p>
-    						</div>
-    					</div>
+                     <h4>Programming the Date Selector</h4>
+                     <div class="row">
+                      <div class="col-md-6">
+                         <img src="img/selector.gif">
+                     </div>
+                     <div class="col-md-6">
+                         <p>The battery-powered control dial that users use to select the month being visualized connects to a Processing sketch over bluetooth low energy. The processing sketch talks to an LED display connected to an arduino board over serial and prints the month being visualized.
+                         </p>
+                     </div>
+                 </div>
+                 <h4>Building the Cabinet</h4>
+                 <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/drywall.png">
+                    </div>
+                    <div class="col-md-6">
+                        <p>To keep build costs down, I have decided to repurpose an IKEA Kallax bookshelf to serve as the external frame. However, since this is a 4x4 grid, I had to use drywall to construct an internal frame for the 8x8 grid. 
+                        </p>
+                    </div>
+                </div>
+                <h4>Assembling the Matrix</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                     <img src="img/wiring.jpg">
+                 </div>
+                 <div class="col-md-6">
+                     <p>To create the grid on which the visualization will be displayed, I am using an 8x8 grid of RGB LEDs. I've attached foam board to the back of the shelf to easily mount and adjust the LEDs.
+                     </p>
+                 </div>
+             </div>
 
-    					<h4>Wiring the LEDs</h4>
-    					<div class="row">
-    						<div class="col-md-6">
-    							<img src="img/wirewrap.jpg">
-    						</div>
-    						<div class="col-md-6">
-    							<p>Each LED is connected to the matrix using a wire wrapping technique. I chose to wire wrap over solder each LED together because it elimnates the possibility of damaging or destroying LEDs. Additionally, using wire wrapping makes repairing easier because the wrapping can be undone quickly.</p>
-    						</div>
-    					</div>
+             <h4>Wiring the LEDs</h4>
+             <div class="row">
+              <div class="col-md-6">
+                 <img src="img/wirewrap.jpg">
+             </div>
+             <div class="col-md-6">
+                 <p>Each LED is connected to the matrix using a wire wrapping technique. I chose to wire wrap over solder each LED together because it elimnates the possibility of damaging or destroying LEDs. Additionally, using wire wrapping makes repairing easier because the wrapping can be undone quickly.</p>
+             </div>
+         </div>
 
-    					<h4>Programming the Date Selector</h4>
-    					<div class="row">
-    						<div class="col-md-6">
-    							<img src="img/selector.gif">
-    						</div>
-    						<div class="col-md-6">
-    							<p>The battery-powered control dial that users use to select the month being visualized connects to a Processing sketch over bluetooth low energy. The processing sketch talks to an LED display connected to an arduino board over serial and prints the month being visualized.
-    							</p>
-    						</div>
-    					</div>
+         <h4>Connecting the LEDs to the Arduino</h4>
+         <div class="row">
+          <div class="col-md-6">
+             <img src="img/colorduino.jpg">
+         </div>
+         <div class="col-md-6">
+             <p>The rows and columns of the LED matrix interface with the Arduino Uno through a RGB matrix shield called a Colorduino. The Arduino is then connected to a mac running a processing sketch. </p>
+         </div>
+     </div>
 
 
-    				</div>
-    			</section>
-
-    			<div class="image image2">
-    				<div class="container">
-    					<div class="row">
-    						<div class="col-lg-12">
-    							<h2>"There is a kind of magic to a map... We explore an area, we document it. And in doing so we create a thing, an artifact, that outlines and represents our understanding of that space."</h2>
-    							<h4>- Ethan Marcotte</h4>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-
-    			<section id="cited" class="cited-section">
-    				<div class="container">
-    					<h1>Works Cited</h1>
-    					<p>The following pieces have inspired the development of this research design venture. Special thanks to Virginia Kuhn, Elizabeth Ramsey, Sonia Seetherman, Raphael Arar and Michael Bodie for guiding this design process. </p>
-    					<div class="row">
-    						<div class="col-md-4">
-    							<h4>Installations</h4>
-    							<p>Big Bang Data, Centre de Cultura Contemporania de Barcelona. 2014.</p>
-    							<p>Listening Post, by Mark Hansen and Ben Rubin. 2001.</p>
-    							<p>(+/-) Pendulum, by Raphael Arar. 2014.</p>
-    							<p>eCloud, by Aaron Koblin, Nik Hafermaas and Dan Goods. 2010.</p>
-    							<p>Immaterials Light Painting, by Timo Arnall, Jorn Knutsen and Einar Sneve Martinussen. 2011.</p>
-    						</div>
-    						<div class="col-md-4">
-    							<h4>Writing</h4>
-    							<p>Evocative Objects, Cherry Turkle. 2007.</p>
-    							<p>The Visual Display of Quantiative Information, Edward Tufte. 1983.</p>
-    							<p>The Annual Report of Feltron, #8 and #9, Nicholas Felton. 2012-2013.</p>
-    						</div>
-    						<div class="col-md-4">
-    							<h4>Talks</h4>
-    							<p>Eccentric Spaces, Robert Harrison. <a href="http://vimeo.com/63525054">Video</a></p>
-    							<p>The Map is Not the Territory, Ethan Marcotte. <a href="http://vimeo.com/63525054">Video</a></p>
-    							<p>Too Big to Fail, Reaktor Design Day 2014, Nicholas Felton. <a href="http://vimeo.com/109119931">Video</a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</section>
-    		</div>
-    		<div id="footer">
-    			<div class="container">
-    				<p class="muted credit">© McKenzie Carlile, 2015.</p>
-    			</div>
-    		</div>
+     <h4>Checking the LEDs</h4>
+     <div class="row">
+      <div class="col-md-6">
+          <img src="img/colorcheck.gif">
+      </div>
+      <div class="col-md-6">
+       <p>After wiring the LEDs together and connecting each strand to the Colorduino, I uploaded an open source program to check if each LED was working and addressable.</p>
+   </div>
+</div>
+</div>
 
 
 
+</div>
+</section>
+
+<div class="image image2">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-12">
+             <h2>"There is a kind of magic to a map... We explore an area, we document it. And in doing so we create a thing, an artifact, that outlines and represents our understanding of that space."</h2>
+             <h4>- Ethan Marcotte</h4>
+         </div>
+     </div>
+ </div>
+</div>
+
+<section id="cited" class="cited-section">
+    <div class="container">
+       <h1>Works Cited</h1>
+       <p>The following pieces have inspired the development of this research design venture. Special thanks to Virginia Kuhn, Elizabeth Ramsey, Sonia Seetherman, Raphael Arar and Michael Bodie for guiding this design process. </p>
+       <div class="row">
+          <div class="col-md-4">
+             <h4>Installations</h4>
+             <p>Big Bang Data, Centre de Cultura Contemporania de Barcelona. 2014.</p>
+             <p>Listening Post, by Mark Hansen and Ben Rubin. 2001.</p>
+             <p>(+/-) Pendulum, by Raphael Arar. 2014.</p>
+             <p>eCloud, by Aaron Koblin, Nik Hafermaas and Dan Goods. 2010.</p>
+             <p>Immaterials Light Painting, by Timo Arnall, Jorn Knutsen and Einar Sneve Martinussen. 2011.</p>
+         </div>
+         <div class="col-md-4">
+             <h4>Writing</h4>
+             <p>Evocative Objects, Cherry Turkle. 2007.</p>
+             <p>The Visual Display of Quantiative Information, Edward Tufte. 1983.</p>
+             <p>The Annual Report of Feltron, #8 and #9, Nicholas Felton. 2012-2013.</p>
+         </div>
+         <div class="col-md-4">
+             <h4>Talks</h4>
+             <p>Eccentric Spaces, Robert Harrison. <a href="http://vimeo.com/63525054">Video</a></p>
+             <p>The Map is Not the Territory, Ethan Marcotte. <a href="http://vimeo.com/63525054">Video</a></p>
+             <p>Too Big to Fail, Reaktor Design Day 2014, Nicholas Felton. <a href="http://vimeo.com/109119931">Video</a></p>
+         </div>
+     </div>
+ </div>
+</section>
+</div>
+<div id="footer">
+ <div class="container">
+    <p class="muted credit">© McKenzie Carlile, 2015.</p>
+</div>
+</div>
 
 
 
-    		<!-- jQuery -->
-    		<script src="js/jquery.js"></script>
-
-    		<!-- Bootstrap Core JavaScript -->
-    		<script src="js/bootstrap.min.js"></script>
-
-    		<!-- Scrolling Nav JavaScript -->
-    		<script src="js/jquery.easing.min.js"></script>
-    		<script src="js/scrolling-nav.js"></script>
 
 
-    	</body>
 
-    	</html>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Scrolling Nav JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+
+
+</body>
+
+</html>
