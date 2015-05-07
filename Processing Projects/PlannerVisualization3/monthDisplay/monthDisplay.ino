@@ -1,3 +1,9 @@
+//usb port on right is 46
+//usb port on left is 50
+
+//LEDmap on port 46
+//monthDisplay on port 50
+
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
@@ -9,7 +15,7 @@ String months [] = {
 void setup()
 {
   lcd.begin(16, 2);
-  //  Serial.begin(9600);
+   Serial.begin(9600);
   lcd.clear();
 }
 
@@ -25,7 +31,7 @@ void loop()
   lcd.print("1988");
 
   if (Serial.available()) {
-//    val = Serial.read();
+    val = Serial.read();
   }
 
   delay(10);

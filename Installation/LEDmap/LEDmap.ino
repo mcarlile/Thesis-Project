@@ -1,3 +1,9 @@
+//usb port on right is 46
+//usb port on left is 50
+
+//LEDmap on port 46
+//monthDisplay on port 50
+
 #include <Colorduino.h>
 
 int val = 1;
