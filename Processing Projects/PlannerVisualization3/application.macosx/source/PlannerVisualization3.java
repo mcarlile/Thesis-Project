@@ -16,6 +16,12 @@ import java.io.IOException;
 
 public class PlannerVisualization3 extends PApplet {
 
+//usb port on right is 46
+//usb port on left is 50
+
+//LEDmap on port 46
+//monthDisplay on port 50
+
 
 
 
@@ -31,13 +37,23 @@ int color2 = color(143, 178, 89);
 int color3 = color(255, 217, 51); 
 int color4 = color(253, 127, 0); 
 
-Serial myPort;
+Serial colorduinoPort;
+Serial monthDisplayPort;
+
+
 
 public void setup() {
   size(800, 800);
   println(Serial.list());
-    String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
-    myPort = new Serial(this, portName, 9600);
+
+  // ledMap is port50
+  String colorduinoPortName = Serial.list()[2]; 
+  colorduinoPort = new Serial(this, colorduinoPortName, 9600);
+
+  //monthDisplay is port46
+  String monthDisplayPortName = Serial.list()[3];
+  monthDisplayPort = new Serial(this, monthDisplayPortName, 9600);
+
 
   //load the CSV into a table
   Table table = loadTable("1988.csv");
@@ -57,7 +73,9 @@ public void setup() {
 }
 
 public void draw() {
-  myPort.write(month);
+  colorduinoPort.write(month);
+  monthDisplayPort.write(month);
+
 
 
   for (int i = ( (month*cols)-cols); i < cols*month; i++) {
@@ -78,7 +96,6 @@ public void draw() {
 
 
 public void keyPressed() {
-
   if (keyCode == DOWN) {
 
     if (month <= 11) {
@@ -94,6 +111,7 @@ public void keyPressed() {
       month = 12;
     }
   }
+  println(month);
 }
 
   static public void main(String[] passedArgs) {
