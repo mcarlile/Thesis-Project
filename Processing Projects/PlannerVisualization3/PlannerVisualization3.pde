@@ -83,14 +83,14 @@ void keyPressed() {
     if (month <= 11) {
       month++;
     } else if (month ==12) {
-      month = 1;
+//      month = 1;
     }
   } else if (keyCode == UP) {
 
     if (month >= 2) {
       month --;
     } else if (month == 1) {
-      month = 12;
+//      month = 12;
     }
   }
   println(month);

@@ -101,21 +101,21 @@ public void keyPressed() {
     if (month <= 11) {
       month++;
     } else if (month ==12) {
-      month = 1;
+//      month = 1;
     }
   } else if (keyCode == UP) {
 
     if (month >= 2) {
       month --;
     } else if (month == 1) {
-      month = 12;
+//      month = 12;
     }
   }
   println(month);
 }
 
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "PlannerVisualization3" };
+    String[] appletArgs = new String[] { "--full-screen", "--bgcolor=#666666", "--stop-color=#cccccc", "PlannerVisualization3" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {
