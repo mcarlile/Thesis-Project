@@ -22,6 +22,18 @@ int orangeR = 95;
 int orangeG = 100;
 int orangeB = 0;
 
+//int greenR = 95;
+//int greenG = 255;
+//int greenB = 94;
+//
+//int yellowR = 92;
+//int yellowG = 110;
+//int yellowB = 63;
+//
+//int orangeR = 255;
+//int orangeG = 0;
+//int orangeB = 0;
+
 void setup()
 {
   Colorduino.Init();
@@ -53,7 +65,7 @@ void loop () {
 
   if (val != oldVal) {
     if (val == 1) {
-
+      //      Colorduino.ColorFill(255, 0, 0);
       clearPixels();
       Colorduino.SetPixel(6, 12, greenR, greenG, greenB); // green
       Colorduino.SetPixel(6, 13, yellowR, yellowG, yellowB); //yellow
